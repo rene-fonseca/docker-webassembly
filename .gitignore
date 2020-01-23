@@ -1,1 +1,4 @@
-*.tar.gz
+# ignore for wasmtime
+*.gz
+*.xz
+wasmtime/wasmtime-x86_64-linux/
