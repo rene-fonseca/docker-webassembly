@@ -35,7 +35,7 @@ If you use *cmake* you should build your project using commands like below:
 ```
 mkdir build
 cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=/wasi-sdk-8.0/share/cmake/wasi-sdk.cmake -DWASI_SDK_PREFIX=/wasi-sdk-8.0
+cmake .. -DCMAKE_TOOLCHAIN_FILE=/wasi-sdk/share/cmake/wasi-sdk.cmake -DWASI_SDK_PREFIX=/wasi-sdk
 cmake --build . --target install
 ```
 
