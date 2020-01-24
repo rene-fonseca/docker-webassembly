@@ -1,4 +1,4 @@
-# WASI-SDK Tool-Chain Docker Image
+# WASI-SDK Tool Chain Docker Image
 
 This image provides the WASI-SDK tool chain ready for building WASI WebAssembly modules for running with wasmtime which is also included (see repo wasmtime). WASI (WebAssembly System Interface) provides an API layer (mostly POSIX compatible) to allow system integration.
 
