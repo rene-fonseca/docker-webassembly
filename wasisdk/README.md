@@ -10,7 +10,7 @@ The WebAssembly engine and WASI together provide a way to support many different
 
 wasmtime and WASI are both very much in development so you can experience some issues.
 
-The image also includes the common tools git, make and cmake.
+The image also includes the common tools *git*, *make* and *cmake*.
 
 The image is hosted at dockerhub (https://hub.docker.com/repository/docker/renefonseca/wasisdk).
 
