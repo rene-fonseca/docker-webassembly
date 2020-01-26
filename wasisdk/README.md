@@ -62,7 +62,7 @@ You can run your tests in an Azure pipeline. Job snippet using cmake:
 resources:
   containers:
   - container: wasi
-    image: renefonseca/base-wasi:latest
+    image: <YOUR IMAGE BASED ON renefonseca/wasisdk:latest BUT WITH BUILD TOOLS ADDED>
 
 - job: wasm32
   pool:
