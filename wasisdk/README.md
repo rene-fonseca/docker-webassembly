@@ -53,3 +53,35 @@ You can remove the WebAssembly registration again using this command:
 ```
 docker run --privileged renefonseca/wasisdk:latest register-webassembly.sh clear
 ```
+
+## Azure DevOps Pipeline
+
+You can run your tests in an Azure pipeline. Job snippet using cmake:
+
+```
+resources:
+  containers:
+  - container: wasi
+    image: renefonseca/base-wasi:latest
+
+- job: wasm32
+  pool:
+    vmImage: 'ubuntu-18.04'
+  container: wasi
+  steps:
+  - script: cmake $(Build.SourcesDirectory) -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=install -DCMAKE_TOOLCHAIN_FILE=/wasi-sdk-8.0/share/cmake/wasi-sdk.cmake -DWASI_SDK_PREFIX=/wasi-sdk-8.0
+    displayName: 'Config'
+    workingDirectory: $(Build.BinariesDirectory)
+
+  - script: cmake --build . --config Debug --target install -- -j 4
+    displayName: 'Build'
+    workingDirectory: $(Build.BinariesDirectory)
+
+  - script: |
+      wasmtime YOURTESTAPP
+    displayName: 'Run tests'
+    continueOnError: true
+    workingDirectory: $(Build.BinariesDirectory)
+```
+
+Note that, you need to add support for the interpreter "wasmtime" prefix in your CMakeLists.txt if you want to run using *ctest*.
