@@ -14,8 +14,10 @@ The image is hosted at dockerhub (https://hub.docker.com/repository/docker/renef
 
 ## How to Build
 
+Set the environment TAG to the TAG used in the wasmtime GIT repo.
+
 ```
-./build.sh
+TAG=VERSION ./build.sh
 ```
 
 This should build *renefonseca/wasmtime:VERSION* and *renefonseca/wasmtime:latest*.
