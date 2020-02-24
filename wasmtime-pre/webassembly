@@ -1,0 +1,6 @@
+package webassembly
+type magic
+offset 0
+magic \x00\x61\x73\x6d\x01\x00\x00\x00
+mask \xff\xff\xff\xff\xff\xff\xff\xff
+interpreter /usr/bin/wasmtime
